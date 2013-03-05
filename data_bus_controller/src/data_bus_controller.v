@@ -1,33 +1,37 @@
-module data_bus_controller (fft_enable, fir_enable, iir_enable, clk, addr, fft_done, filt_done);
-	input [31:0] offset, filesize;
-	input fir_enable, iir_enable, fft_enable, clk;
-	output [31:0] addr;
-	output fft_done, filt_done;
-	
-	wire [31:0] count;
-	wire [31:0] fft_addr, filt_addr;
-	wire filt_enable;
+module data_bus_controller (data_bus, fft_data_in, fir_data_in, iir_data_in, fft_data_out, fir_data_out, iir_data_out, fft_put_req, fir_put_req, iir_put_req, fft_get_req, fir_get_req, iir_get_req, fft_full, fir_full, iir_full, fft_empty, fir_empty, iir_empty, clk);
 
-fft_address_calc fft_calc (.offset(offset), .filesize(filesize), .enable(fft_enable), .clk(clk), .addr(fft_addr), .done(fft_done));
-	
-filt_address_calc filt_calc (.offset(offset), .filesize(filesize), .enable(filt_enable), .clk(clk), .addr(filt_addr), .done(filt_done));
+inout [31:0] data_bus;
 
+input [31:0] fft_data_in, fir_data_in, iir_data_in;
+input fft_put_req, fir_put_req, iir_put_req, fft_put_req, fir_put_req, iir_put_req, fft_full, fir_full, iir_full, fft_empty, fir_empty, iir_empty, clk;
+
+output [31:0] fft_data_out, fir_data_out, iir_data_out;
+	
 always @(posedge clk)
 begin
-
-	if (fir_enable == 1 || iir_enable == 1)
+	if (!fft_empty && fft_get_req == 1)
 	begin
-		filt_enable <= 1;
+		data_bus <= fft_data_in;
 	end
-	
-	if (fft_enable == 1)
+	if (!fir_empty && fir_get_req == 1)
 	begin
-		addr <= fft_addr;
+		data_bus <= fir_data_in;
 	end
-
-	if (filt_enable <= 1)
+	if (!iir_empty && iir_get_req == 1)
 	begin
-		addr <= filt_addr;
+		data_bus <= iir_data_in;
+	end
+	if (!fft_full && fft_put_req == 1)
+	begin
+		fft_data_in <= data_bus;
+	end
+	if (!fir_full && fir_put_req == 1)
+	begin
+		fir_data_in <= data_bus;
+	end
+	if (!iir_full && iir_put_req == 1)
+	begin
+		iir_data_in <= data_bus;
 	end
 end
 endmodule
