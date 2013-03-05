@@ -6,38 +6,3 @@
 # //         CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
 # //        PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS.
 # //
-# do runsim.do 
-# ** Warning: (vlib-34) Library already exists at "work".
-# Modifying modelsim.ini
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Skipping module filt_address_calc
-# 
-# Top level modules:
-# 	filt_address_calc
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Compiling module filt_addr_calc_tb
-# 
-# Top level modules:
-# 	filt_addr_calc_tb
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Skipping module adder32b
-# 
-# Top level modules:
-# 	adder32b
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Skipping module counter1
-# 
-# Top level modules:
-# 	counter1
-# vsim -lib work -t ps filt_addr_calc_tb 
-# Loading work.filt_addr_calc_tb
-# Loading work.filt_address_calc
-# Loading work.counter1
-# Loading work.adder32b
-# ** Note: $finish    : filt_addr_calc_tb.v(72)
-#    Time: 501775 ns  Iteration: 0  Instance: /filt_addr_calc_tb
-# 1
-# Break at filt_addr_calc_tb.v line 72
-# Simulation Breakpoint: 1
-# Break at filt_addr_calc_tb.v line 72
-# MACRO ./runsim.do PAUSED at line 36
