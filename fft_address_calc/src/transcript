@@ -95,7 +95,7 @@
 #   -y <path>          Specify Verilog source library directory
 #   -libmap_verbose    Display library map pattern matching information during compilation
 # Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Compiling module fft_addr_calc_tb
+# -- Skipping module fft_addr_calc_tb
 # 
 # Top level modules:
 # 	fft_addr_calc_tb
