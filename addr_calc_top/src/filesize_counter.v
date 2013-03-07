@@ -1,6 +1,6 @@
-module counter1 (filesize,enable,clk,count,done);
+module counter1_4 (filesize,enable,pause,clk,count,done);
 	input [31:0] filesize;
-	input enable, clk;
+	input enable, clk, pause;
 	output [31:0] count;
 	output done;
 
@@ -11,16 +11,22 @@ always @(posedge clk)
 begin
 	if (enable)
 	begin
-		if (count != filesize)
+		if (count != filesize/4)
 		begin
-			if (count == 100000000)
+			if (!pause)
 			begin
-				count <= 0;
-				done <= 0;
+				if (count == 100000000)
+				begin
+					count <= 0;
+					done <= 0;
+				end else
+				begin
+					done <= 0;
+					count <= count + 1;
+				end
 			end else
 			begin
-				done <= 0;
-				count <= count + 1;
+				count <= count;
 			end
 		end else
 		begin

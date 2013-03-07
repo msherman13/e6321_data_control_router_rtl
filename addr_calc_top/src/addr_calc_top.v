@@ -1,33 +1,59 @@
-module addr_calc_top (offset, filesize, fft_enable, fir_enable, iir_enable, clk, addr, fft_done, filt_done);
+module addr_calc_top (offset, filesize, fft_enable, fir_enable, iir_enable, fft_read_pause, fir_read_pause, iir_read_pause, fft_write_pause, fir_write_pause, iir_write_pause, clk, addr, fft_read_done, fft_write_done, fir_read_done, fir_write_done, iir_read_done, iir_write_done);
 	input [31:0] offset, filesize;
-	input fir_enable, iir_enable, fft_enable, clk;
+	input fir_enable, iir_enable, fft_enable, fft_read_pause, fir_read_pause, iir_read_pause, fft_write_pause, fir_write_pause, iir_write_pause, clk;
 	output [31:0] addr;
-	output fft_done, filt_done;
+	output fft_read_done, fft_write_done, fir_read_done, fir_write_done, iir_read_done, iir_write_done;
 	
-	wire [31:0] count;
-	wire [31:0] fft_addr, filt_addr;
-	wire filt_enable;
+	wire [31:0] fft_read_addr, fft_write_addr, fir_read_addr, fir_write_addr, iir_read_addr, iir_write_addr;
 
-fft_address_calc fft_calc (.offset(offset), .filesize(filesize), .enable(fft_enable), .clk(clk), .addr(fft_addr), .done(fft_done));
+fft_address_calc fft_read_calc (.offset(offset), .filesize(filesize), .enable(fft_enable), .pause(fft_read_pause), .clk(clk), .addr(fft_read_addr), .done(fft_read_done));
+fft_address_calc fft_write_calc (.offset(offset), .filesize(filesize), .enable(fft_enable), .pause(fft_write_pause), .clk(clk), .addr(fft_write_addr), .done(fft_write_done));
 	
-filt_address_calc filt_calc (.offset(offset), .filesize(filesize), .enable(filt_enable), .clk(clk), .addr(filt_addr), .done(filt_done));
+filt_address_calc fir_read_calc (.offset(offset), .filesize(filesize), .enable(fir_enable), .pause(fir_read_pause), .clk(clk), .addr(fir_read_addr), .done(fir_read_done));
+filt_address_calc fir_write_calc (.offset(offset), .filesize(filesize), .enable(fir_enable), .pause(fir_write_pause), .clk(clk), .addr(fir_write_addr), .done(fir_write_done));
+
+filt_address_calc iir_read_calc (.offset(offset), .filesize(filesize), .enable(iir_enable), .pause(iir_read_pause), .clk(clk), .addr(iir_read_addr), .done(iir_read_done));
+filt_address_calc iir_write_calc (.offset(offset), .filesize(filesize), .enable(iir_enable), .pause(iir_write_pause), .clk(clk), .addr(iir_write_addr), .done(iir_write_done));
 
 always @(posedge clk)
 begin
-
-	if (fir_enable == 1 || iir_enable == 1)
-	begin
-		filt_enable <= 1;
-	end
 	
-	if (fft_enable == 1)
+	if (fft_enable == 1 && !done)
 	begin
-		addr <= fft_addr;
+		if (!fft_read_pause)
+		begin
+			addr <= fft_read_addr;
+		end
+		if (!fft_write_pause)
+		begin
+			addr <= fft_write_addr;
+		end
 	end
 
-	if (filt_enable <= 1)
+	if (fir_enable == 1 && !done)
 	begin
-		addr <= filt_addr;
+		if (!fir_read_pause)
+		begin
+			addr <= fir_read_addr;
+		end
+		if (!fir_write_pause)
+		begin
+			addr <= fir_write_addr;
+		end
 	end
+
+	if (iir_enable == 1 && !done)
+	begin
+		if (!iir_read_pause)
+		begin
+			addr <= iir_read_addr;
+		end
+		if (!iir_write_pause)
+		begin
+			addr <= iir_write_addr;
+		end
+	end
+
+
 end
 endmodule

@@ -1,6 +1,6 @@
-module counter1 (filesize,enable,clk,count,done);
+module counter1 (filesize,enable,pause,clk,count,done);
 	input [31:0] filesize;
-	input enable, clk;
+	input enable, clk, pause;
 	output [31:0] count;
 	output done;
 

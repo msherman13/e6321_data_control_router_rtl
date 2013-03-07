@@ -5,12 +5,12 @@ module fft_addr_calc_tb();
 
 
    reg [31:0] offset, filesize;
-   reg enable, clk;
+   reg enable, pause, clk;
    wire done;
    wire [31:0] addr;
    integer i;
 
-fft_address_calc calculator (.offset(offset), .filesize(filesize), .enable(enable), .clk(clk), .addr(addr), .done(done));
+fft_address_calc calculator (.offset(offset), .filesize(filesize), .enable(enable), .pause(pause), .clk(clk), .addr(addr), .done(done));
 
    always begin
       `half_clk_period;
