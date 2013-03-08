@@ -1,3 +1,15 @@
+/******************************************************************************
+**
+** Module:      addr_calc_top
+** Description: Top level routing & buffers for address calculation line.
+**
+** Author:      Miles Sherman
+** Affiliation: Columbia University
+**
+** Last Update: 03/08/2013
+**
+******************************************************************************/
+
 module addr_calc_top (offset, filesize, fft_enable, fir_enable, iir_enable, fft_read_pause, fir_read_pause, iir_read_pause, fft_write_pause, fir_write_pause, iir_write_pause, clk, addr, fft_read_done, fft_write_done, fir_read_done, fir_write_done, iir_read_done, iir_write_done);
 	input [31:0] offset, filesize;
 	input fir_enable, iir_enable, fft_enable, fft_read_pause, fir_read_pause, iir_read_pause, fft_write_pause, fir_write_pause, iir_write_pause, clk;
@@ -5,64 +17,76 @@ module addr_calc_top (offset, filesize, fft_enable, fir_enable, iir_enable, fft_
 	output fft_read_done, fft_write_done, fir_read_done, fir_write_done, iir_read_done, iir_write_done;
 	
 	wire [31:0] fft_read_addr, fft_write_addr, fir_read_addr, fir_write_addr, iir_read_addr, iir_write_addr;
+	wire [31:0] filesize_by4;
+	reg to_fft_go, from_fft_go, to_fir_go, from_fir_go, to_iir_go, from_iir_go;
 
-fft_address_calc fft_read_calc (.offset(offset), .filesize(filesize), .enable(fft_enable), .pause(fft_read_pause), .clk(clk), .addr(fft_read_addr), .done(fft_read_done));
-fft_address_calc fft_write_calc (.offset(offset), .filesize(filesize), .enable(fft_enable), .pause(fft_write_pause), .clk(clk), .addr(fft_write_addr), .done(fft_write_done));
-	
-filt_address_calc fir_read_calc (.offset(offset), .filesize(filesize), .enable(fir_enable), .pause(fir_read_pause), .clk(clk), .addr(fir_read_addr), .done(fir_read_done));
-filt_address_calc fir_write_calc (.offset(offset), .filesize(filesize), .enable(fir_enable), .pause(fir_write_pause), .clk(clk), .addr(fir_write_addr), .done(fir_write_done));
+assign filesize_by4 = filesize >>2 ;
 
-filt_address_calc iir_read_calc (.offset(offset), .filesize(filesize), .enable(iir_enable), .pause(iir_read_pause), .clk(clk), .addr(iir_read_addr), .done(iir_read_done));
-filt_address_calc iir_write_calc (.offset(offset), .filesize(filesize), .enable(iir_enable), .pause(iir_write_pause), .clk(clk), .addr(iir_write_addr), .done(iir_write_done));
+//FFT address calculator
+filt_address_calc fft_read_calc (.offset(offset), .filesize(filesize_by4), .enable(fft_enable), .pause(fft_read_pause), .clk(clk), .addr(fft_read_addr), .done(fft_read_done));
+fft_out_address_calc fft_write_calc (.offset(offset), .filesize(filesize_by4), .enable(fft_enable), .pause(fft_write_pause), .clk(clk), .addr(fft_write_addr), .done(fft_write_done));
+
+//FIR address calculator
+filt_address_calc fir_read_calc (.offset(offset), .filesize(filesize_by4), .enable(fir_enable), .pause(fir_read_pause), .clk(clk), .addr(fir_read_addr), .done(fir_read_done));
+filt_address_calc fir_write_calc (.offset(offset), .filesize(filesize_by4), .enable(fir_enable), .pause(fir_write_pause), .clk(clk), .addr(fir_write_addr), .done(fir_write_done));
+
+//IIR address calculator
+filt_address_calc iir_read_calc (.offset(offset), .filesize(filesize_by4), .enable(iir_enable), .pause(iir_read_pause), .clk(clk), .addr(iir_read_addr), .done(iir_read_done));
+filt_address_calc iir_write_calc (.offset(offset), .filesize(filesize_by4), .enable(iir_enable), .pause(iir_write_pause), .clk(clk), .addr(iir_write_addr), .done(iir_write_done));
 
 always @(posedge clk)
 begin
-
-	assign addr = ((fft_enable && !done && !fft_read_pause) ? fft_read_addr : {32'bZ});
-	assign addr = ((fft_enable && !done && !fft_write_pause) ? fft_read_addr : {32'bZ});
-
-	assign addr = ((fir_enable && !done && !fir_read_pause) ? fir_read_addr : {32'bZ});
-	assign addr = ((fir_enable && !done && !fir_write_pause) ? fir_read_addr : {32'bZ});
-
-	assign addr = ((iir_enable && !done && !iir_read_pause) ? iir_read_addr : {32'bZ});
-	assign addr = ((iir_enable && !done && !iir_write_pause) ? iir_read_addr : {32'bZ});
-	
-/*	if (fft_enable == 1 && !done)
+	// FFT tri-state enable logic.
+	if (fft_enable)
 	begin
-		if (!fft_read_pause)
-		begin
-			addr <= fft_read_addr;
-		end
-		if (!fft_write_pause)
-		begin
-			addr <= fft_write_addr;
-		end
+		case ({fft_read_pause, fft_write_pause})
+		2'b01: {to_fft_go, from_fft_go} <= 2'b10;
+		2'b10: {to_fft_go, from_fft_go} <= 2'b01;
+		2'b11: {to_fft_go, from_fft_go} <= 2'b00;
+		endcase
+		to_fir_go <= 0;
+		from_fir_go <= 0;
+		to_iir_go <= 0;
+		from_iir_go <= 0;
 	end
 
-	if (fir_enable == 1 && !done)
+	//FIR tri-state enable lofic.
+	if (fir_enable)
 	begin
-		if (!fir_read_pause)
-		begin
-			addr <= fir_read_addr;
-		end
-		if (!fir_write_pause)
-		begin
-			addr <= fir_write_addr;
-		end
+		case ({fir_read_pause, fir_write_pause})
+		2'b01: {to_fir_go, from_fir_go} <= 2'b10;
+		2'b10: {to_fir_go, from_fir_go} <= 2'b01;
+		2'b11: {to_fir_go, from_fir_go} <= 2'b00;
+		endcase
+		to_fft_go <= 0;
+		from_fft_go <= 0;
+		to_iir_go <= 0;
+		from_iir_go <= 0;
 	end
 
-	if (iir_enable == 1 && !done)
+	//IIR tri-state enable lofic.
+	if (iir_enable)
 	begin
-		if (!iir_read_pause)
-		begin
-			addr <= iir_read_addr;
-		end
-		if (!iir_write_pause)
-		begin
-			addr <= iir_write_addr;
-		end
+		case ({iir_read_pause, iir_write_pause})
+		2'b01: {to_iir_go, from_iir_go} <= 2'b10;
+		2'b10: {to_iir_go, from_iir_go} <= 2'b01;
+		2'b11: {to_iir_go, from_iir_go} <= 2'b00;
+		endcase
+		to_fft_go <= 0;
+		from_fft_go <= 0;
+		to_fir_go <= 0;
+		from_fir_go <= 0;
 	end
-*/
-
 end
+
+//Tri-states.
+assign addr = (to_fft_go? fft_read_addr : {32'bZ});
+assign addr = (from_fft_go? fft_write_addr : {32'bZ});
+
+assign addr = (to_fir_go? fir_read_addr : {32'bZ});
+assign addr = (from_fir_go? fir_write_addr : {32'bZ});
+
+assign addr = (to_iir_go? iir_read_addr : {32'bZ});
+assign addr = (from_iir_go? iir_write_addr : {32'bZ});
+	
 endmodule

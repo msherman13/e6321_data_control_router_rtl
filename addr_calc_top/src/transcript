@@ -6,139 +6,57 @@
 # //         CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
 # //        PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS.
 # //
-vlog -reportprogress 300 -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/adder32b.v
+# do runsim.do 
+# ** Warning: (vlib-34) Library already exists at "work".
+# Modifying modelsim.ini
 # Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Compiling module adder32b
+# -- Skipping module adder32b
 # 
 # Top level modules:
 # 	adder32b
-vlog -reportprogress 300 -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/addr_calc_top.v
+# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
+# -- Skipping module addr_calc_top_tb
+# 
+# Top level modules:
+# 	addr_calc_top_tb
 # Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
 # -- Compiling module addr_calc_top
-# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/addr_calc_top.v(18): Undefined variable: fir_enable.
-# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/addr_calc_top.v(18): Undefined variable: iir_enable.
-# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/addr_calc_top.v(1): Identifier must be declared with a port mode: fft_enable.
-# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/addr_calc_top.v(1): Identifier must be declared with a port mode: fir_enable.
-# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/addr_calc_top.v(1): Identifier must be declared with a port mode: iir_enable.
-vlog -reportprogress 300 -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/fft_addr_calc_tb.v
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Compiling module fft_addr_calc_tb
 # 
 # Top level modules:
-# 	fft_addr_calc_tb
-vlog -reportprogress 300 -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/fft_address_calc.v
+# 	addr_calc_top
 # Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Compiling module fft_address_calc
-# 
-# Top level modules:
-# 	fft_address_calc
-vlog -reportprogress 300 -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/filesize_counter.v
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Compiling module counter1
-# 
-# Top level modules:
-# 	counter1
-vlog -reportprogress 300 -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/filt_addr_calc_tb.v
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Compiling module filt_addr_calc_tb
-# 
-# Top level modules:
-# 	filt_addr_calc_tb
-vlog -reportprogress 300 -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/filt_address_calc.v
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Compiling module filt_address_calc
+# -- Skipping module filt_address_calc
 # 
 # Top level modules:
 # 	filt_address_calc
-vlog -reportprogress 300 -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/shifter2b.v
 # Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Compiling module shifter2b
-# 
-# Top level modules:
-# 	shifter2b
-vlog -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/adder32b.v
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Compiling module adder32b
-# 
-# Top level modules:
-# 	adder32b
-vlog -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/filesize_counter.v
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Compiling module counter1
+# -- Skipping module counter1
 # 
 # Top level modules:
 # 	counter1
-vlog -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/fft_addr_calc_tb.v
 # Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Compiling module fft_addr_calc_tb
+# -- Skipping module counter2
 # 
 # Top level modules:
-# 	fft_addr_calc_tb
-vlog -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/fft_address_calc.v
+# 	counter2
 # Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Compiling module fft_address_calc
+# -- Skipping module fft_out_address_calc
 # 
 # Top level modules:
-# 	fft_address_calc
-vlog -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/filt_addr_calc_tb.v
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Compiling module filt_addr_calc_tb
-# 
-# Top level modules:
-# 	filt_addr_calc_tb
-vlog -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/filt_address_calc.v
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Compiling module filt_address_calc
-# 
-# Top level modules:
-# 	filt_address_calc
-vlog -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/shifter2b.v
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Compiling module shifter2b
-# 
-# Top level modules:
-# 	shifter2b
-sdsdfsdf
-# invalid command name "sdsdfsdf"
-vlog -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/adder32b.v
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Compiling module adder32b
-# 
-# Top level modules:
-# 	adder32b
-vlog -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/filesize_counter.v
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Compiling module counter1
-# 
-# Top level modules:
-# 	counter1
-vlog -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/fft_addr_calc_tb.v
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Compiling module fft_addr_calc_tb
-# 
-# Top level modules:
-# 	fft_addr_calc_tb
-vlog -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/fft_address_calc.v
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Compiling module fft_address_calc
-# 
-# Top level modules:
-# 	fft_address_calc
-vlog -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/filt_addr_calc_tb.v
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Compiling module filt_addr_calc_tb
-# 
-# Top level modules:
-# 	filt_addr_calc_tb
-vlog -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/filt_address_calc.v
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Compiling module filt_address_calc
-# 
-# Top level modules:
-# 	filt_address_calc
-vlog -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/addr_calc_top/src/shifter2b.v
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Compiling module shifter2b
-# 
-# Top level modules:
-# 	shifter2b
+# 	fft_out_address_calc
+# vsim -lib work -t ps addr_calc_top_tb 
+# Loading work.addr_calc_top_tb
+# Loading work.addr_calc_top
+# Loading work.filt_address_calc
+# Loading work.counter1
+# Loading work.adder32b
+# Loading work.fft_out_address_calc
+# Loading work.counter2
+# ** Note: $finish    : addr_calc_top_tb.v(78)
+#    Time: 23750 ns  Iteration: 0  Instance: /addr_calc_top_tb
+# 1
+# Break at addr_calc_top_tb.v line 78
+# Simulation Breakpoint: 1
+# Break at addr_calc_top_tb.v line 78
+# MACRO ./runsim.do PAUSED at line 39
+

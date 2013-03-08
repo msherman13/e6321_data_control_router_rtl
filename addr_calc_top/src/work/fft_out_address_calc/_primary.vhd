@@ -1,6 +1,6 @@
 library verilog;
 use verilog.vl_types.all;
-entity filt_address_calc is
+entity fft_out_address_calc is
     port(
         offset          : in     vl_logic_vector(31 downto 0);
         filesize        : in     vl_logic_vector(31 downto 0);
@@ -10,4 +10,4 @@ entity filt_address_calc is
         addr            : out    vl_logic_vector(31 downto 0);
         done            : out    vl_logic
     );
-end filt_address_calc;
+end fft_out_address_calc;

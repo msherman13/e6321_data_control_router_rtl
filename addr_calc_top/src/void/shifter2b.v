@@ -1,7 +1,7 @@
 /******************************************************************************
 **
-** Module:      adder32b
-** Description: 32-bit adder with no carry in or carry out. For address calc.
+** Module:      shifter2b
+** Description: Arithmetic 2-bit shifter.
 **
 ** Author:      Miles Sherman
 ** Affiliation: Columbia University
@@ -10,13 +10,11 @@
 **
 ******************************************************************************/
 
-module adder32b (a, b, clk, s);
-	input [31:0] a;
-	input [31:0] b;
-	input clk;
-	output [31:0] s;
+module shifter2b (in, clk, out);
+input [31:0] in;
+input clk;
+output [31:0] out;
 
-
-	assign s = a + b;
+	assign out = in << 2;
 
 endmodule

@@ -26,11 +26,10 @@ output [31:0] fft_data_out, fir_data_out, iir_data_out;
 output data_to_fft, data_from_fft, data_to_fir, data_from_fir, data_to_iir, data_from_iir;
 
 reg data_to_fft, data_from_fft, data_to_fir, data_from_fir, data_to_iir, data_from_iir;
-reg [31:0] data_bus_reg;
 	
 always @(posedge clk)
 begin
-data_bus_reg <= data_bus;
+
 	//FSM for FFT enable.
 	if (fft_enable)
 	begin
