@@ -17,8 +17,17 @@ filt_address_calc iir_write_calc (.offset(offset), .filesize(filesize), .enable(
 
 always @(posedge clk)
 begin
+
+	assign addr = ((fft_enable && !done && !fft_read_pause) ? fft_read_addr : {32'bZ});
+	assign addr = ((fft_enable && !done && !fft_write_pause) ? fft_read_addr : {32'bZ});
+
+	assign addr = ((fir_enable && !done && !fir_read_pause) ? fir_read_addr : {32'bZ});
+	assign addr = ((fir_enable && !done && !fir_write_pause) ? fir_read_addr : {32'bZ});
+
+	assign addr = ((iir_enable && !done && !iir_read_pause) ? iir_read_addr : {32'bZ});
+	assign addr = ((iir_enable && !done && !iir_write_pause) ? iir_read_addr : {32'bZ});
 	
-	if (fft_enable == 1 && !done)
+/*	if (fft_enable == 1 && !done)
 	begin
 		if (!fft_read_pause)
 		begin
@@ -53,7 +62,7 @@ begin
 			addr <= iir_write_addr;
 		end
 	end
-
+*/
 
 end
 endmodule
