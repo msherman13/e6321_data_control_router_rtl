@@ -2,10 +2,10 @@
 **
 ** Module:      pla_top
 ** Description: Logic array for high level control of communication interface
-**		system and accelerators.
+**              system and accelerators.
 **
 ** Author:      Miles Sherman
-** Contact:	ms4543@columbia.edu
+** Contact:     ms4543@columbia.edu
 ** Affiliation: Columbia University
 **
 ** Last Update: 03/18/2013

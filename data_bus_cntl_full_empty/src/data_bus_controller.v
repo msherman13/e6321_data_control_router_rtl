@@ -2,12 +2,13 @@
 **
 ** Module:      data_bus_controller
 ** Description: Tri-state logic to control data i/o between accelerators & RAM.
-**		data_in means data coming into router.
-**		data_out means data going out of router.
-**		to_accelerator means data going from router to acc. FIFO.
-**		from_accelerator means data coming from acc. FIFO to router.
+**              data_in means data coming into router.
+**              data_out means data going out of router.
+**              to_accelerator means data going from router to acc. FIFO.
+**              from_accelerator means data coming from acc. FIFO to router.
 **
 ** Author:      Miles Sherman
+** Contact:     ms4543@columbia.edu
 ** Affiliation: Columbia University
 **
 ** Last Update: 03/07/2013
