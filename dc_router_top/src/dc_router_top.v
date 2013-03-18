@@ -16,7 +16,7 @@ module dc_router_top (clk, reset, instruction, offset, filesize, acc_done, fft_e
 
 //Terminal declarations.
 input clk, reset, to_fft_full, to_fft_empty, from_fft_full, from_fft_empty, to_fir_full, to_fir_empty, from_fir_full, from_fir_empty, to_iir_full, to_iir, empty, from_iir_full, from_iir_empty;
-input [31:0] instruction, offset, filesize
+input [31:0] instruction, offset, filesize;
 input [127:0] fft_data_in, fir_data_in, iir_data_in;
 
 output acc_done, fft_enable, fir_enable, iir_enable, fft_put_req, fft_get_req, fir_put_req, fir_get_req, iir_put_req, iir_get_req, ram_read_enable, ram_write_enable;
