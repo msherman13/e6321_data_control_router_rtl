@@ -26,8 +26,8 @@ vmap work work
 # Include Netlist and Testbench
 #vlog -incr /tools2/courses/ee6321/share/ibm13rflpvt/verilog/ibm13rflpvt.v
 vlog -incr  
-vlog -incr data_bus_controller_tb.v
-vlog -incr data_bus_controller.v 
+vlog -incr pla_top_tb.v
+vlog -incr pla_top.v 
 
 # Run Simulator 
 vsim -t ps -lib work data_bus_controller_tb 

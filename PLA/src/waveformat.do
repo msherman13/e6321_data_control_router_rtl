@@ -1,14 +1,10 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
-add wave -noupdate -format Logic /data_bus_controller_tb/clk
-add wave -noupdate -format Logic /data_bus_controller_tb/fft_enable
-add wave -noupdate -format Logic /data_bus_controller_tb/to_fft_empty
-add wave -noupdate -format Logic /data_bus_controller_tb/to_fft_full
-add wave -noupdate -format Logic /data_bus_controller_tb/from_fft_empty
-add wave -noupdate -format Logic /data_bus_controller_tb/from_fft_full
-add wave -noupdate -format Literal -radix binary /data_bus_controller_tb/fft_data_in
-add wave -noupdate -format Literal -radix binary /data_bus_controller_tb/fft_data_out
-add wave -noupdate -format Literal -radix binary /data_bus_controller_tb/data_bus
+add wave -noupdate -format Logic /pla_top_tb/clk
+add wave -noupdate -format Logic /pla_top_tb/fft_enable
+add wave -noupdate -format Logic /pla_top_tb/fir_enable
+add wave -noupdate -format Logic /pla_top_tb/iir_enable
+add wave -noupdate -format Logic /pla_top_tb/acc_done
 
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {7378 ps} 0}

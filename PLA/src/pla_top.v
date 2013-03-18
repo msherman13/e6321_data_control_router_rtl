@@ -13,13 +13,13 @@
 ******************************************************************************/
 
 
-module pla_top (instruction, fft_read_done, fft_write_done, fir_read_done, fir_write_done, iir_read_done, iir_write_done, ram_read_enable, ram_write_enable, fft_enable, fir_enable, iir_enable, acc_done, clk, reset);
+module pla_top (instruction, fft_read_done, fft_write_done, fir_read_done, fir_write_done, iir_read_done, iir_write_done, fft_enable, fir_enable, iir_enable, acc_done, clk, reset);
 
 input clk, reset, fft_read_done, fft_write_done, fir_read_done, fir_write_done, iir_read_done, iir_write_done;
 
 input [31:0] instruction;
 
-output ram_read_enable, ram_write_enable, fft_enable, fir_enable, iir_enable, acc_done;
+output fft_enable, fir_enable, iir_enable, acc_done;
 
 reg fft_enable, fir_enable, iir_enable, acc_done;
 	
