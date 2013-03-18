@@ -13,6 +13,7 @@
 ******************************************************************************/
 
 module addr_calc_top (offset, filesize, fft_enable, fir_enable, iir_enable, fft_read_pause, fir_read_pause, iir_read_pause, fft_write_pause, fir_write_pause, iir_write_pause, clk, addr, fft_read_done, fft_write_done, fir_read_done, fir_write_done, iir_read_done, iir_write_done);
+
 	input [31:0] offset, filesize;
 	input fir_enable, iir_enable, fft_enable, fft_read_pause, fir_read_pause, iir_read_pause, fft_write_pause, fir_write_pause, iir_write_pause, clk;
 	output [31:0] addr;
