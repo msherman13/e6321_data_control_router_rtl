@@ -1,0 +1,157 @@
+# //  ModelSim SE 5.8e Aug 28 2004 Linux 2.6.18-274.3.1.el5
+# //
+# //  Copyright Model Technology, a Mentor Graphics Corporation company, 2004
+# //                         All Rights Reserved.
+# //                   UNPUBLISHED, LICENSED SOFTWARE.
+# //         CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+# //        PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS.
+# //
+vlib work
+vmap work work
+# Copying /work/tools3/modeltech/linux/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# Warning: Copied /work/tools3/modeltech/linux/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+vlog -reportprogress 300 -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v
+# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
+# -- Compiling module pla_top
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(35): Undefined variable: acc_done.
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(110): Undefined variable: fft_done.
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(16): Identifier must be declared with a port mode: fft_done.
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(16): Identifier must be declared with a port mode: acc_done.
+vlog -reportprogress 300 -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v
+# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
+# -- Compiling module pla_top
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(110): Undefined variable: fft_done.
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(16): Identifier must be declared with a port mode: fft_done.
+vlog -reportprogress 300 -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v
+# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
+# -- Compiling module pla_top
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(20): In, out, or inout does not appear in port list: offset.
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(20): In, out, or inout does not appear in port list: filesize.
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(33): (vlog-2110) Illegal reference to net "fft_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(34): (vlog-2110) Illegal reference to net "fft_get_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(34): (vlog-2110) Illegal reference to net "fft_put_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(35): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(39): (vlog-2110) Illegal reference to net "fft_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(40): (vlog-2110) Illegal reference to net "fft_get_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(40): (vlog-2110) Illegal reference to net "fft_put_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(41): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(45): (vlog-2110) Illegal reference to net "fft_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(46): (vlog-2110) Illegal reference to net "fft_get_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(46): (vlog-2110) Illegal reference to net "fft_put_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(47): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(49): (vlog-2110) Illegal reference to net "iir_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(49): (vlog-2110) Illegal reference to net "fir_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(57): (vlog-2110) Illegal reference to net "fir_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(58): (vlog-2110) Illegal reference to net "fir_get_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(58): (vlog-2110) Illegal reference to net "fir_put_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(59): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(63): (vlog-2110) Illegal reference to net "fir_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(64): (vlog-2110) Illegal reference to net "fir_get_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(64): (vlog-2110) Illegal reference to net "fir_put_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(65): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(69): (vlog-2110) Illegal reference to net "fir_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(70): (vlog-2110) Illegal reference to net "fir_get_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(70): (vlog-2110) Illegal reference to net "fir_put_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(71): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(73): (vlog-2110) Illegal reference to net "iir_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(73): (vlog-2110) Illegal reference to net "fft_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(81): (vlog-2110) Illegal reference to net "iir_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(82): (vlog-2110) Illegal reference to net "iir_get_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(82): (vlog-2110) Illegal reference to net "iir_put_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(83): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(87): (vlog-2110) Illegal reference to net "iir_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(88): (vlog-2110) Illegal reference to net "iir_get_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(88): (vlog-2110) Illegal reference to net "iir_put_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(89): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(93): (vlog-2110) Illegal reference to net "iir_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(94): (vlog-2110) Illegal reference to net "iir_get_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(94): (vlog-2110) Illegal reference to net "iir_put_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(95): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(97): (vlog-2110) Illegal reference to net "fir_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(97): (vlog-2110) Illegal reference to net "fft_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(101): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(106): (vlog-2110) Illegal reference to net "fir_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(106): (vlog-2110) Illegal reference to net "fft_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(107): (vlog-2110) Illegal reference to net "acc_done".
+vlog -reportprogress 300 -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v
+# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
+# -- Compiling module pla_top
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(33): (vlog-2110) Illegal reference to net "fft_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(34): (vlog-2110) Illegal reference to net "fft_get_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(34): (vlog-2110) Illegal reference to net "fft_put_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(35): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(39): (vlog-2110) Illegal reference to net "fft_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(40): (vlog-2110) Illegal reference to net "fft_get_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(40): (vlog-2110) Illegal reference to net "fft_put_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(41): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(45): (vlog-2110) Illegal reference to net "fft_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(46): (vlog-2110) Illegal reference to net "fft_get_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(46): (vlog-2110) Illegal reference to net "fft_put_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(47): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(49): (vlog-2110) Illegal reference to net "iir_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(49): (vlog-2110) Illegal reference to net "fir_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(57): (vlog-2110) Illegal reference to net "fir_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(58): (vlog-2110) Illegal reference to net "fir_get_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(58): (vlog-2110) Illegal reference to net "fir_put_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(59): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(63): (vlog-2110) Illegal reference to net "fir_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(64): (vlog-2110) Illegal reference to net "fir_get_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(64): (vlog-2110) Illegal reference to net "fir_put_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(65): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(69): (vlog-2110) Illegal reference to net "fir_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(70): (vlog-2110) Illegal reference to net "fir_get_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(70): (vlog-2110) Illegal reference to net "fir_put_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(71): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(73): (vlog-2110) Illegal reference to net "iir_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(73): (vlog-2110) Illegal reference to net "fft_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(81): (vlog-2110) Illegal reference to net "iir_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(82): (vlog-2110) Illegal reference to net "iir_get_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(82): (vlog-2110) Illegal reference to net "iir_put_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(83): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(87): (vlog-2110) Illegal reference to net "iir_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(88): (vlog-2110) Illegal reference to net "iir_get_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(88): (vlog-2110) Illegal reference to net "iir_put_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(89): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(93): (vlog-2110) Illegal reference to net "iir_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(94): (vlog-2110) Illegal reference to net "iir_get_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(94): (vlog-2110) Illegal reference to net "iir_put_req".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(95): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(97): (vlog-2110) Illegal reference to net "fir_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(97): (vlog-2110) Illegal reference to net "fft_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(101): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(106): (vlog-2110) Illegal reference to net "fir_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(106): (vlog-2110) Illegal reference to net "fft_enable".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(107): (vlog-2110) Illegal reference to net "acc_done".
+vlog -reportprogress 300 -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v
+# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
+# -- Compiling module pla_top
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(26): near "always":  expecting: IDENT
+
+
+
+vlog -reportprogress 300 -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v
+# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
+# -- Compiling module pla_top
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(26): near "always":  expecting: IDENT
+vlog -reportprogress 300 -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v
+# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
+# -- Compiling module pla_top
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(36): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(41): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(46): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(57): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(62): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(67): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(78): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(83): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(88): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(94): (vlog-2110) Illegal reference to net "acc_done".
+# ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v(100): (vlog-2110) Illegal reference to net "acc_done".
+vlog -reportprogress 300 -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/PLA/src/pla_top.v
+# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
+# -- Compiling module pla_top
+# 
+# Top level modules:
+# 	pla_top

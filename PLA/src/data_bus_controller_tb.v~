@@ -13,7 +13,7 @@
 `define half_clk_period #25000
 `define SD #1000
 
-module pla_top_tb();
+module data_bus_controller_tb();
 
 reg [31:0] data_bus_reg;
 reg [31:0] fft_data_in, fir_data_in, iir_data_in;
