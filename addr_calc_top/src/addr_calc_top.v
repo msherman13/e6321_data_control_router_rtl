@@ -2,6 +2,8 @@
 **
 ** Module:      addr_calc_top
 ** Description: Top level routing & buffers for address calculation line.
+**		Read means data from RAM -> Accelerator.
+**		Write means data from Accelerator -> RAM.
 **
 ** Author:      Miles Sherman
 ** Affiliation: Columbia University

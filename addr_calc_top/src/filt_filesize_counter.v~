@@ -48,7 +48,7 @@ begin
 	end else
 	begin
 		count <= 100000000;
-		done <= 0;
+		done <= 1;
 	end
 end
 endmodule
