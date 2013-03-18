@@ -9,8 +9,6 @@ entity pla_top is
         fir_write_done  : in     vl_logic;
         iir_read_done   : in     vl_logic;
         iir_write_done  : in     vl_logic;
-        ram_read_enable : out    vl_logic;
-        ram_write_enable: out    vl_logic;
         fft_enable      : out    vl_logic;
         fir_enable      : out    vl_logic;
         iir_enable      : out    vl_logic;

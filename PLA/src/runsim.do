@@ -30,7 +30,7 @@ vlog -incr pla_top_tb.v
 vlog -incr pla_top.v 
 
 # Run Simulator 
-vsim -t ps -lib work data_bus_controller_tb 
+vsim -t ps -lib work pla_top_tb 
 do waveformat.do   
 run -all
 #while {[exa testend_s] == "false"} {run 0.20 ms}
