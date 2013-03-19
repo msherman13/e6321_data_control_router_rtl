@@ -90,3 +90,9 @@ vlog -reportprogress 300 -work work /home/user4/spring13/ms4543/E6321/Project/da
 # ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/dc_router_top/src/dc_router_top.v(15): Identifier must be declared with a port mode: fir_data_out.
 # ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/dc_router_top/src/dc_router_top.v(15): Identifier must be declared with a port mode: iir_data_out.
 # ** Error: /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/dc_router_top/src/dc_router_top.v(15): Identifier must be declared with a port mode: to_iir_empty.
+vlog -reportprogress 300 -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/dc_router_top/src/dc_router_top.v
+# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
+# -- Compiling module dc_router_top
+# 
+# Top level modules:
+# 	dc_router_top
