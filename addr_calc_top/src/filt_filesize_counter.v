@@ -27,9 +27,9 @@ begin
 		begin
 			if (!pause)
 			begin
-				if (count == 100000000)
+				if (count == 0)
 				begin
-					count <= 0;
+					count <= 1;
 					done <= 0;
 				end else
 				begin
@@ -39,6 +39,7 @@ begin
 			end else
 			begin
 				count <= count;
+				done <= 0;
 			end
 		end else
 		begin
@@ -47,7 +48,7 @@ begin
 		end
 	end else
 	begin
-		count <= 100000000;
+		count <= 0;
 		done <= 0;
 	end
 end

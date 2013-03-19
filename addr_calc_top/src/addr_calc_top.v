@@ -38,7 +38,7 @@ filt_address_calc fir_write_calc (.offset(offset), .filesize(filesize_by4), .ena
 filt_address_calc iir_read_calc (.offset(offset), .filesize(filesize_by4), .enable(iir_enable), .pause(iir_read_pause), .clk(clk), .addr(iir_read_addr), .done(iir_read_done));
 filt_address_calc iir_write_calc (.offset(offset), .filesize(filesize_by4), .enable(iir_enable), .pause(iir_write_pause), .clk(clk), .addr(iir_write_addr), .done(iir_write_done));
 
-always @(posedge clk)
+always @(*)
 begin
 	// FFT tri-state enable logic.
 	if (fft_enable)
@@ -55,7 +55,7 @@ begin
 	end
 
 	//FIR tri-state enable lofic.
-	if (fir_enable)
+	else if (fir_enable)
 	begin
 		case ({fir_read_pause, fir_write_pause})
 		2'b01: {to_fir_go, from_fir_go} <= 2'b10;
@@ -69,7 +69,7 @@ begin
 	end
 
 	//IIR tri-state enable lofic.
-	if (iir_enable)
+	else if (iir_enable)
 	begin
 		case ({iir_read_pause, iir_write_pause})
 		2'b01: {to_iir_go, from_iir_go} <= 2'b10;
@@ -80,6 +80,10 @@ begin
 		from_fft_go <= 0;
 		to_fir_go <= 0;
 		from_fir_go <= 0;
+	end
+	else
+	begin
+		{to_fft_go, from_fft_go, to_fir_go, from_fir_go, to_iir_go, from_iir_go} <= 6'b000000;
 	end
 end
 

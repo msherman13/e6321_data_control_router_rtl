@@ -22,13 +22,43 @@ input [31:0] instruction;
 output fft_enable, fir_enable, iir_enable, acc_done;
 
 reg fft_enable, fir_enable, iir_enable, acc_done;
+reg instruction_valid;
+
+always @(posedge instruction[31:0])
+begin
+	instruction_valid = 1;
+end
+
+always @(negedge instruction[31:0])
+begin
+	instruction_valid = 1;
+end
+
+always @(*)
+begin
+	if (fft_read_done & fft_write_done)
+	begin
+		instruction_valid = 0;
+		acc_done = 1;
+	end
+	if (fir_read_done & fir_write_done)
+	begin
+		instruction_valid = 0;
+		acc_done = 1;
+	end
+	if (iir_read_done & iir_write_done)
+	begin
+		instruction_valid = 0;
+		acc_done = 1;
+	end
+end
 	
-always @(posedge clk)
+always @(*)
 begin
 if (!reset)
 begin
 	//FSM for FFT signals.
-	if (instruction == 2'b01)
+	if (instruction == 2'b01 & instruction_valid == 1)
 	begin
 		if (!fft_read_done & !fft_write_done)
 		begin
@@ -49,7 +79,7 @@ begin
 	end
 
 	//FSM for FIR signals.
-	else if (instruction == 2'b10)
+	else if (instruction == 2'b10 & instruction_valid == 1)
 	begin
 		if (!fir_read_done & !fir_write_done)
 		begin
@@ -70,7 +100,7 @@ begin
 	end
 
 	//FSM for IIR signals.
-	else if (instruction == 2'b11)
+	else if (instruction == 2'b11 & instruction_valid == 1)
 	begin
 		if (!iir_read_done & !iir_write_done)
 		begin
@@ -91,7 +121,7 @@ begin
 	end
 	else
 	begin
-			acc_done <= 0;
+			{fft_enable, fir_enable, iir_enable} <= 3'b000;
 	end
 end
 else
