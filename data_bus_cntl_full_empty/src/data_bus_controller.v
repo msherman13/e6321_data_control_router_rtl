@@ -18,12 +18,12 @@
 
 module data_bus_controller (data_bus, fft_data_in, fir_data_in, iir_data_in, fft_data_out, fir_data_out, iir_data_out, to_fft_empty, to_fft_full, from_fft_empty, from_fft_full, to_fir_empty, to_fir_full, from_fir_empty, from_fir_full, to_iir_empty, to_iir_full, from_iir_empty, from_iir_full, data_to_fft, data_from_fft, data_to_fir, data_from_fir, data_to_iir, data_from_iir, fft_enable, fir_enable, iir_enable, fft_put_req, fft_get_req, fir_put_req, fir_get_req, iir_put_req, iir_get_req, ram_read_enable, ram_write_enable, clk, reset);
 
-inout [127:0] data_bus;
+inout [31:0] data_bus;
 
-input [127:0] fft_data_in, fir_data_in, iir_data_in;
+input [31:0] fft_data_in, fir_data_in, iir_data_in;
 input to_fft_empty, to_fft_full, from_fft_empty, from_fft_full, to_fir_empty, to_fir_full, from_fir_empty, from_fir_full, to_iir_empty, to_iir_full, from_iir_empty, from_iir_full, fft_enable, fir_enable, iir_enable, clk, reset;
 
-output [127:0] fft_data_out, fir_data_out, iir_data_out;
+output [31:0] fft_data_out, fir_data_out, iir_data_out;
 output data_to_fft, data_from_fft, data_to_fir, data_from_fir, data_to_iir, data_from_iir, fft_put_req, fft_get_req, fir_put_req, fir_get_req, iir_put_req, iir_get_req, ram_read_enable, ram_write_enable;
 
 reg data_to_fft, data_from_fft, data_to_fir, data_from_fir, data_to_iir, data_from_iir, fft_put_req, fft_get_req, fir_put_req, fir_get_req, iir_put_req, iir_get_req, ram_read_enable, ram_write_enable;
@@ -148,13 +148,13 @@ begin
 	end
 end
 
-	assign data_bus = (data_from_fft ? fft_data_in : {128'bZ});
-	assign fft_data_out = (data_to_fft ? data_bus : {128'bZ});
+	assign data_bus = (data_from_fft ? fft_data_in : {32'bZ});
+	assign fft_data_out = (data_to_fft ? data_bus : {32'bZ});
 
-	assign data_bus = (data_from_fir ? fir_data_in : {128'bZ});
-	assign fir_data_out = (data_to_fir ? data_bus : {128'bZ});
+	assign data_bus = (data_from_fir ? fir_data_in : {32'bZ});
+	assign fir_data_out = (data_to_fir ? data_bus : {32'bZ});
 
-	assign data_bus = (data_from_iir ? iir_data_in : {128'bZ});
-	assign iir_data_out = (data_to_iir ? data_bus : {128'bZ});
+	assign data_bus = (data_from_iir ? iir_data_in : {32'bZ});
+	assign iir_data_out = (data_to_iir ? data_bus : {32'bZ});
 
 endmodule
