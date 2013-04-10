@@ -5,7 +5,7 @@ add wave -noupdate -format Logic /pla_top_tb/fft_enable
 add wave -noupdate -format Logic /pla_top_tb/fir_enable
 add wave -noupdate -format Logic /pla_top_tb/iir_enable
 add wave -noupdate -format Logic /pla_top_tb/acc_done
-
+add wave -noupdate -format Logic /pla_top_tb/instruction
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {7378 ps} 0}
 WaveRestoreZoom {0 ps} {47250 ps}

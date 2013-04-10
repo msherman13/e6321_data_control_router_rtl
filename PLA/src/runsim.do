@@ -24,10 +24,10 @@ vlib work
 vmap work work
 
 # Include Netlist and Testbench
-#vlog -incr /tools2/courses/ee6321/share/ibm13rflpvt/verilog/ibm13rflpvt.v
+vlog -incr /tools2/courses/ee6321/share/ibm13rflpvt/verilog/ibm13rflpvt.v
 vlog -incr  
 vlog -incr pla_top_tb.v
-vlog -incr pla_top.v 
+vlog -incr pla_top.nl.v 
 
 # Run Simulator 
 vsim -t ps -lib work pla_top_tb 

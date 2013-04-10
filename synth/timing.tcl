@@ -1,9 +1,9 @@
 # Timing setup for synthesis
 
 # Setting variables 
-set clk_period 12
+set clk_period 10
 set clk_uncertainty 0
-set clk_transition 1.5
+set clk_transition 1
 set typical_input_delay 0
 set typical_output_delay 3
 set typical_wire_load 0.001
@@ -44,4 +44,4 @@ remove_input_delay -clock $clk_name [find port $clk_port]
 set_output_delay $typical_output_delay [all_outputs] -clock $clk_name 
 
 # Set loading of outputs 
-set_load $typical_wire_load [all_outputs] 
+set_load $typical_wire_load [all_outputs]

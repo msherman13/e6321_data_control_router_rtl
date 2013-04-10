@@ -12,10 +12,10 @@
 ******************************************************************************/
 
 //Module declaration.
-module dc_router_top (clk, reset, instruction, offset, filesize, acc_done, fft_enable, fir_enable, iir_enable, data_bus, fft_data_in, fir_data_in, iir_data_in, fft_data_out, fir_data_out, iir_data_out, to_fft_empty, to_fft_full, from_fft_empty, from_fft_full, to_fir_empty, to_fir_full, from_fir_empty, from_fir_full, to_iir_empty, to_iir_full, from_iir_empty, from_iir_full, fft_put_req, fft_get_req, fir_put_req, fir_get_req, iir_put_req, iir_get_req, ram_read_enable, ram_write_enable, addr);
+module dc_router_top (clk, reset,chipselect, instruction, offset, filesize, acc_done, fft_enable, fir_enable, iir_enable, data_bus, fft_data_in, fir_data_in, iir_data_in, fft_data_out, fir_data_out, iir_data_out, to_fft_empty, to_fft_full, from_fft_empty, from_fft_full, to_fir_empty, to_fir_full, from_fir_empty, from_fir_full, to_iir_empty, to_iir_full, from_iir_empty, from_iir_full, fft_put_req, fft_get_req, fir_put_req, fir_get_req, iir_put_req, iir_get_req, ram_read_enable, ram_write_enable, addr);
 
 //Terminal declarations.
-input clk, reset, to_fft_full, to_fft_empty, from_fft_full, from_fft_empty, to_fir_full, to_fir_empty, from_fir_full, from_fir_empty, to_iir_full, to_iir_empty, from_iir_full, from_iir_empty;
+input clk, reset, chipselect, to_fft_full, to_fft_empty, from_fft_full, from_fft_empty, to_fir_full, to_fir_empty, from_fir_full, from_fir_empty, to_iir_full, to_iir_empty, from_iir_full, from_iir_empty;
 input [31:0] instruction, offset, filesize;
 input [31:0] fft_data_in, fir_data_in, iir_data_in;
 
@@ -41,7 +41,7 @@ assign iir_read_pause = !data_to_iir;
 assign iir_write_pause = !data_from_iir;
 
 //Sub-module instantiation.
-pla_top pla_top (.instruction(instruction), .fft_read_done(fft_read_done), .fft_write_done(fft_write_done), .fir_read_done(fir_read_done), .fir_write_done(fir_write_done), .iir_read_done(iir_read_done), .iir_write_done(iir_write_done), .fft_enable(fft_enable), .fir_enable(fir_enable), .iir_enable(iir_enable), .acc_done(acc_done), .clk(clk), .reset(reset));
+pla_top pla_top (.chipselect(chipselect), .instruction(instruction), .fft_read_done(fft_read_done), .fft_write_done(fft_write_done), .fir_read_done(fir_read_done), .fir_write_done(fir_write_done), .iir_read_done(iir_read_done), .iir_write_done(iir_write_done), .fft_enable(fft_enable), .fir_enable(fir_enable), .iir_enable(iir_enable), .acc_done(acc_done), .clk(clk), .reset(reset));
 
 addr_calc_top addr_calc (.offset(offset), .filesize(filesize), .fft_enable(fft_enable), .fir_enable(fir_enable), .iir_enable(iir_enable), .fft_read_pause(fft_read_pause), .fir_read_pause(fir_read_pause), .iir_read_pause(iir_read_pause), .fft_write_pause(fft_write_pause), .fir_write_pause(fir_write_pause), .iir_write_pause(iir_write_pause), .clk(clk), .addr(addr), .fft_read_done(fft_read_done), .fft_write_done(fft_write_done), .fir_read_done(fir_read_done), .fir_write_done(fir_write_done), .iir_read_done(iir_read_done), .iir_write_done(iir_write_done));
 

@@ -8,9 +8,17 @@
 #########################################
 set BEHAVIORROOT "../rtl/"
 #set top_level
-set top_level lfsr1
+set top_level pla_top
 source -verbose "common.tcl"
-read_verilog {./rtl/lfsr1.v}
+
+read_verilog {./rtl/pla_top.v}
+#read_verilog {./rtl/data_bus_controller.v}
+#read_verilog {./rtl/addr_calc_top.v}
+#read_verilog {./rtl/filt_address_calc.v}
+#read_verilog {./rtl/adder32b.v}
+#read_verilog {./rtl/filt_filesize_counter.v}
+#read_verilog {./rtl/dc_router_top.v}
+
 list_designs
 
 #########################################
@@ -18,7 +26,7 @@ list_designs
 #########################################
 current_design $top_level
 link
-source -verbose "timing.tcl"
+#source -verbose "timing.tcl"
 #set_driving_cell -lib_cell HS65_GS_IVX2 [all_inputs]
 set_max_capacitance 0.001 [all_inputs]
 set_max_fanout 4 $top_level
@@ -41,6 +49,7 @@ set_fix_multiple_port_nets -all -buffer_constants
 check_design
 #uniquify
 compile_ultra
+#compile
 
 set maxpaths 20
 set rpt_file "${top_level}.dc.rpt1"
@@ -92,4 +101,3 @@ report_compile_options >> ${rpt_file}
 report_constraint -all_violators -verbose >> ${rpt_file}
 report_timing -path full -delay max -max_paths $maxpaths -nworst 100 >> ${rpt_file}
 
-quit

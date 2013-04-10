@@ -1,1 +1,1 @@
-dc_shell -f lfsr1.tcl | tee lfsr1.log
+dc_shell -f dc_router.tcl | tee dc_router.log

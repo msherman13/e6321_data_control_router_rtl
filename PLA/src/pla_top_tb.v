@@ -65,7 +65,7 @@ initial begin
 	@(posedge clk);
 
 	//Begin FIR Testing.
-	instruction = 2'b10;
+	instruction = 2'b11;
 	@(posedge clk);
 	@(posedge clk);
 	@(posedge clk);
@@ -82,7 +82,7 @@ initial begin
 	@(posedge clk);
 
 	//Begin IIR Testing.
-	instruction = 2'b11;
+	instruction = 3'b111;
 	@(posedge clk);
 	@(posedge clk);
 	@(posedge clk);
