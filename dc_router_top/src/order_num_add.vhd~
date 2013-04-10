@@ -1,0 +1,88 @@
+-------------------------------------------------------------------------------
+--
+-- Module:		order_num_add
+-- Description:	Module to calculate address for adding an order.
+--
+-- Author:		Miles Sherman
+-- Contact:		ms4543@columbia.edu
+--
+-- Last Update: 04/04/2013
+--
+-------------------------------------------------------------------------------
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity order_num_hash is
+	generic (order_num_length : positive := 32); -- Bits of order number to consider.
+	port( 
+		clk				: in std_logic;
+		reset			: in std_logic;
+		add_enable		: in std_logic;
+		order_num		: in std_logic_vector (order_num_length-1 downto 0);
+		data_in			: in (order_num_length-1 downto 0); -- Connect me to the order number bits of RAM data.
+		read_enable		: out std_logic;
+		address			: out std_logic_vector (15 downto 0);
+		address_valid	: out std_logic;
+		);
+end entity order_num_hash;
+
+architecture rtl of order_num_hash is
+
+component order_num_hash
+	port (
+		clk				: in std_logic;
+		order_num		: in std_logic_vector (order_num_length-1 downto 0);
+		hash_address	: out std_logic_vector (15 downto 0)
+	);
+end component;
+
+signal hash_address 	: std_logic_vector (15 downto 0);
+signal count			: integer := 0;
+
+begin
+
+order_num_hash: order_num_hash
+	port map (
+		clk				=> clk,
+		order_num		=> order_num,
+		address			=> hash_address
+	);
+
+	process (clk) 
+	begin
+		if rising_edge(clk) then
+			if (reset = '1') then
+				read_enable <= '0';
+				address <= (others => '0');
+				address_valid <= '0';
+				count <= 0;
+			else
+				address <= hash_address + std_logic_vector(to_unsigned(count, address'length));
+				if (data_in = order_num) then
+					address_valid <= '1';
+				else
+					address_valid <= '0';
+					count <= count + 1;
+				end if;
+
+			end if;
+		end if;
+	end process;
+
+	process (clk) 
+	begin
+		if rising_edge(clk) then
+			if (reset = '1') then
+				write_enable <= '0';
+				read_enable <= '0';
+				address <= (others => '0');
+				first_match <= '0';
+				address_valid <= '0';
+			else
+				address <= hash_address;
+			end if;
+		end if;
+	end process;
+end rtl;
