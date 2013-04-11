@@ -22,7 +22,7 @@ reg [31:0] instruction;
 
 wire fft_enable, fir_enable, iir_enable, acc_done;
 
-pla_top pla_top (.instruction(instruction), .fft_read_done(fft_read_done), .fft_write_done(fft_write_done), .fir_read_done(fir_read_done), .fir_write_done(fir_write_done), .iir_read_done(iir_read_done), .iir_write_done(iir_write_done), .fft_enable(fft_enable), .fir_enable(fir_enable), .iir_enable(iir_enable), .acc_done(acc_done), .clk(clk), .reset(reset));
+pla_top pla_top (.clk(clk), .instruction(instruction), .fft_read_done(fft_read_done), .fft_write_done(fft_write_done), .fir_read_done(fir_read_done), .fir_write_done(fir_write_done), .iir_read_done(iir_read_done), .iir_write_done(iir_write_done), .fft_enable(fft_enable), .fir_enable(fir_enable), .iir_enable(iir_enable), .acc_done(acc_done), .reset(reset));
 
 always
 begin
@@ -33,7 +33,7 @@ end
 initial begin
 	//Initialize inputs.
 	clk = 0;
-	reset = 0;
+	reset = 1;
 	fft_read_done = 0;
 	fft_write_done = 0;
 	fir_read_done = 0;
@@ -48,7 +48,8 @@ initial begin
 	@(posedge clk);
 
 	//Begin FFT Testing.
-	instruction = 2'b01;
+	reset = 0;
+	instruction = 32'b11111100000000000000000000000001;
 	@(posedge clk);
 	@(posedge clk);
 	@(posedge clk);
@@ -65,7 +66,7 @@ initial begin
 	@(posedge clk);
 
 	//Begin FIR Testing.
-	instruction = 2'b11;
+	instruction = 32'b11111100000000000000000000000011;
 	@(posedge clk);
 	@(posedge clk);
 	@(posedge clk);
@@ -82,7 +83,7 @@ initial begin
 	@(posedge clk);
 
 	//Begin IIR Testing.
-	instruction = 3'b111;
+	instruction = 32'b11111100000000000000000000000111;
 	@(posedge clk);
 	@(posedge clk);
 	@(posedge clk);
