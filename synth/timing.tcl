@@ -1,11 +1,11 @@
 # Timing setup for synthesis
 
 # Setting variables 
-set clk_period 10
+set clk_period 3
 set clk_uncertainty 0
-set clk_transition 1
+set clk_transition 0.3
 set typical_input_delay 0
-set typical_output_delay 3
+set typical_output_delay 0.3
 set typical_wire_load 0.001
 
 #Create real clock if clock port is found

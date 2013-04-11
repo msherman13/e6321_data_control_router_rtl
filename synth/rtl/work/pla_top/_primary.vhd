@@ -2,6 +2,7 @@ library verilog;
 use verilog.vl_types.all;
 entity pla_top is
     port(
+        chipselect      : in     vl_logic;
         clk             : in     vl_logic;
         instruction     : in     vl_logic_vector(31 downto 0);
         fft_read_done   : in     vl_logic;

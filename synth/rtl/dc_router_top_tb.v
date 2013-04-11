@@ -73,7 +73,7 @@ begin
 	@(posedge clk);
 	
 	//Begin FFT Testing.
-	instruction = 32'b11111100000000000000000000000001;
+	instruction = 2'b01;
     	offset = 100;
     	filesize = 40;
 	data_bus_reg = 122;
@@ -249,7 +249,7 @@ begin
 	@(posedge clk);
 
 	//Begin FIR Testing.
-	instruction = 32'b11111100000000000000000000000011;
+	instruction = 2'b10;
     	offset = 100;
     	filesize = 40;
 	data_bus_reg = 122;
@@ -397,7 +397,7 @@ begin
 	@(posedge clk);
 
 	//Begin IIR Testing.
-	instruction = 32'b11111100000000000000000000000111;
+	instruction = 2'b11;
     	offset = 100;
     	filesize = 40;
 	data_bus_reg = 122;

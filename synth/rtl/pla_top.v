@@ -13,9 +13,9 @@
 ******************************************************************************/
 
 
-module pla_top (clk, instruction, fft_read_done, fft_write_done, fir_read_done, fir_write_done, iir_read_done, iir_write_done, fft_enable, fir_enable, iir_enable, acc_done, reset);
+module pla_top (chipselect, clk, instruction, fft_read_done, fft_write_done, fir_read_done, fir_write_done, iir_read_done, iir_write_done, fft_enable, fir_enable, iir_enable, acc_done, reset);
 
-input clk, reset, fft_read_done, fft_write_done, fir_read_done, fir_write_done, iir_read_done, iir_write_done;
+input chipselect, clk, reset, fft_read_done, fft_write_done, fir_read_done, fir_write_done, iir_read_done, iir_write_done;
 
 input  [31:0] instruction;
 
@@ -24,7 +24,9 @@ output fft_enable, fir_enable, iir_enable, acc_done;
 reg fft_enable, fir_enable, iir_enable, acc_done;
 reg instruction_valid;
 
-always @(posedge clk) 
+always @(posedge clk)
+begin
+if (chipselect)
 begin
 if (!reset)
 begin
@@ -111,6 +113,13 @@ begin
 	begin
 		acc_done <= 0;
 	end
+end
+else
+begin
+	{fft_enable, fir_enable, iir_enable} <= 3'b000;
+	instruction_valid <= 0;
+	acc_done <= 0;
+end
 end
 else
 begin

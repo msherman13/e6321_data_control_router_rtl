@@ -41,7 +41,7 @@ assign iir_read_pause = !data_to_iir;
 assign iir_write_pause = !data_from_iir;
 
 //Sub-module instantiation.
-pla_top pla_top (.instruction(instruction), .fft_read_done(fft_read_done), .fft_write_done(fft_write_done), .fir_read_done(fir_read_done), .fir_write_done(fir_write_done), .iir_read_done(iir_read_done), .iir_write_done(iir_write_done), .fft_enable(fft_enable), .fir_enable(fir_enable), .iir_enable(iir_enable), .acc_done(acc_done), .clk(clk), .reset(reset));
+pla_top pla_top (.clk(clk), .instruction(instruction), .fft_read_done(fft_read_done), .fft_write_done(fft_write_done), .fir_read_done(fir_read_done), .fir_write_done(fir_write_done), .iir_read_done(iir_read_done), .iir_write_done(iir_write_done), .fft_enable(fft_enable), .fir_enable(fir_enable), .iir_enable(iir_enable), .acc_done(acc_done), .reset(reset));
 
 addr_calc_top addr_calc (.offset(offset), .filesize(filesize), .fft_enable(fft_enable), .fir_enable(fir_enable), .iir_enable(iir_enable), .fft_read_pause(fft_read_pause), .fir_read_pause(fir_read_pause), .iir_read_pause(iir_read_pause), .fft_write_pause(fft_write_pause), .fir_write_pause(fir_write_pause), .iir_write_pause(iir_write_pause), .clk(clk), .addr(addr), .fft_read_done(fft_read_done), .fft_write_done(fft_write_done), .fir_read_done(fir_read_done), .fir_write_done(fir_write_done), .iir_read_done(iir_read_done), .iir_write_done(iir_write_done));
 

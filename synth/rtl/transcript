@@ -1,0 +1,14 @@
+# //  ModelSim SE 5.8e Aug 28 2004 Linux 2.6.18-274.3.1.el5
+# //
+# //  Copyright Model Technology, a Mentor Graphics Corporation company, 2004
+# //                         All Rights Reserved.
+# //                   UNPUBLISHED, LICENSED SOFTWARE.
+# //         CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+# //        PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS.
+# //
+vlog -reportprogress 300 -work work /home/user4/spring13/ms4543/E6321/Project/data_control_router_rtl/synth/rtl/pla_top.v
+# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
+# -- Compiling module pla_top
+# 
+# Top level modules:
+# 	pla_top

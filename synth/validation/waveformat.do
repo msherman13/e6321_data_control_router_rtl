@@ -2,14 +2,14 @@ onerror {resume}
 quietly WaveActivateNextPane {} 0
 add wave -noupdate -format Logic /dc_router_top_tb/clk
 add wave -noupdate -format Literal -radix decimal /dc_router_top_tb/instruction
-add wave -noupdate -format Logic /dc_router_top/instruction_valid
+add wave -noupdate -format Logic /dc_router_top/pla_top/instruction_valid
 add wave -noupdate -format Logic /dc_router_top_tb/fft_enable
 add wave -noupdate -format Logic /dc_router_top_tb/fft_put_req
 add wave -noupdate -format Logic /dc_router_top_tb/fft_get_req
 add wave -noupdate -format Logic /dc_router_top_tb/dc_router_top/data_to_fft
 add wave -noupdate -format Logic /dc_router_top_tb/dc_router_top/data_from_fft
 add wave -noupdate -format Literal -radix decimal /dc_router_top_tb/fft_data_out
-add wave -noupdate -format Literal -radix decimal /dc_router_top/count
+add wave -noupdate -format Literal -radix decimal /dc_router_top_tb/dc_router_top/addr_calc/iir_write_calc/count
 add wave -noupdate -format Logic /dc_router_top_tb/dc_router_top/fft_read_done
 add wave -noupdate -format Logic /dc_router_top_tb/dc_router_top/fft_write_done
 add wave -noupdate -format Logic /dc_router_top_tb/fir_enable
