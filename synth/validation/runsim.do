@@ -24,13 +24,19 @@ vlib work
 vmap work work
 
 # Include Netlist and Testbench
-vlog -incr /tools2/courses/ee6321/share/ibm13rflpvt/verilog/ibm13rflpvt.v
+#vlog -incr /tools2/courses/ee6321/share/ibm13rflpvt/verilog/ibm13rflpvt.v
+vlog -incr  
 vlog -incr dc_router_top_tb.v
-vlog -incr dc_router_top.nl.v
+vlog -incr /user4/spring13/ms4543/E6321/Project/data_control_router_rtl/synth/rtl/dc_router_top.v
+vlog -incr /user4/spring13/ms4543/E6321/Project/data_control_router_rtl/synth/rtl/adder32b.v
+vlog -incr /user4/spring13/ms4543/E6321/Project/data_control_router_rtl/synth/rtl/filt_address_calc.v
+vlog -incr /user4/spring13/ms4543/E6321/Project/data_control_router_rtl/synth/rtl/filt_filesize_counter.v
+vlog -incr /user4/spring13/ms4543/E6321/Project/data_control_router_rtl/synth/rtl/addr_calc_top.v
+vlog -incr /user4/spring13/ms4543/E6321/Project/data_control_router_rtl/synth/rtl/data_bus_controller.v
+vlog -incr /user4/spring13/ms4543/E6321/Project/data_control_router_rtl/synth/rtl/pla_top.v
 
 # Run Simulator 
-#vsim 
-vsim -t ps -lib work dc_router_top_tb -sdftyp /dc_router_top/=dc_router_top.temp.sdf
+vsim -t ps -lib work dc_router_top_tb
 do waveformat.do   
 run -all
 #while {[exa testend_s] == "false"} {run 0.20 ms}

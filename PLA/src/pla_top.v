@@ -13,15 +13,19 @@
 ******************************************************************************/
 
 
+<<<<<<< HEAD
 module pla_top (clk, instruction, fft_read_done, fft_write_done, fir_read_done, fir_write_done, iir_read_done, iir_write_done, fft_enable, fir_enable, iir_enable, acc_done, reset);
+=======
+module pla_top (instruction, fft_read_done, fft_write_done, fir_read_done, fir_write_done, fft_enable, fir_enable, acc_done, clk, reset);
+>>>>>>> c62226aff4358777b49e6d38e76ff1a319794d2f
 
-input clk, reset, fft_read_done, fft_write_done, fir_read_done, fir_write_done, iir_read_done, iir_write_done;
+input clk, reset, fft_read_done, fft_write_done, fir_read_done, fir_write_done;
 
 input  [31:0] instruction;
 
-output fft_enable, fir_enable, iir_enable, acc_done;
+output fft_enable, fir_enable, acc_done;
 
-reg fft_enable, fir_enable, iir_enable, acc_done;
+reg fft_enable, fir_enable, acc_done;
 reg instruction_valid;
 
 always @(posedge clk) 
@@ -39,10 +43,14 @@ begin
 			instruction_valid <= 0;
 		end
 	end
+<<<<<<< HEAD
 	else
 	begin
 		instruction_valid <= 0;
 	end
+=======
+end
+>>>>>>> c62226aff4358777b49e6d38e76ff1a319794d2f
 	
 	//FSM for FFT signals.
 	if (instruction == 32'b11111100000000000000000000000001 & instruction_valid == 1)
@@ -63,6 +71,10 @@ begin
 			fft_enable <= 0;
 			acc_done <= 1;
 		end
+<<<<<<< HEAD
+=======
+		fir_enable <= 0;
+>>>>>>> c62226aff4358777b49e6d38e76ff1a319794d2f
 	end
 	
 	
@@ -85,6 +97,7 @@ begin
 			fir_enable <= 0;
 			acc_done <= 1;
 		end
+<<<<<<< HEAD
 	end
 	
 	//FSM for IIR signals.
@@ -110,6 +123,13 @@ begin
 	else
 	begin
 		acc_done <= 0;
+=======
+		fft_enable <= 0;
+	end
+	else
+	begin
+			{fft_enable, fir_enable} <= 2'b00;
+>>>>>>> c62226aff4358777b49e6d38e76ff1a319794d2f
 	end
 end
 else

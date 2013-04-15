@@ -1,1 +1,1 @@
-vsim -do "runsim.do"
+vsim -do "runsim_annotated.do"

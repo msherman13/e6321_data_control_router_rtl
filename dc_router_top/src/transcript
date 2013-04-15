@@ -95,68 +95,159 @@
 #   -y <path>          Specify Verilog source library directory
 #   -libmap_verbose    Display library map pattern matching information during compilation
 # Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Skipping module dc_router_top_tb
-# 
-# Top level modules:
-# 	dc_router_top_tb
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Compiling module dc_router_top
-# 
-# Top level modules:
-# 	dc_router_top
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Skipping module adder32b
-# 
-# Top level modules:
-# 	adder32b
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Skipping module filt_address_calc
-# 
-# Top level modules:
-# 	filt_address_calc
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Skipping module counter1
-# 
-# Top level modules:
-# 	counter1
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Skipping module addr_calc_top
-# 
-# Top level modules:
-# 	addr_calc_top
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Skipping module data_bus_controller
-# 
-# Top level modules:
-# 	data_bus_controller
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Skipping module pla_top
-# 
-# Top level modules:
-# 	pla_top
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Skipping module fft_out_address_calc
-# 
-# Top level modules:
-# 	fft_out_address_calc
-# Model Technology ModelSim SE vlog 5.8e Compiler 2004.08 Aug 28 2004
-# -- Skipping module counter2
-# 
-# Top level modules:
-# 	counter2
-# vsim -lib work -t ps dc_router_top_tb 
-# Loading work.dc_router_top_tb
-# Loading work.dc_router_top
-# Loading work.pla_top
-# Loading work.addr_calc_top
-# Loading work.filt_address_calc
-# Loading work.counter1
-# Loading work.adder32b
-# Loading work.data_bus_controller
-# ** Note: $finish    : dc_router_top_tb.v(567)
-#    Time: 21625 ns  Iteration: 0  Instance: /dc_router_top_tb
-# 1
-# Break at dc_router_top_tb.v line 567
-# Simulation Breakpoint: 1
-# Break at dc_router_top_tb.v line 567
-# MACRO ./runsim.do PAUSED at line 43
+# ** Error: dc_router_top_tb.v(394): near "<<<":  expecting: IDENT
+# ** Error: dc_router_top_tb.v(401): near "@": syntax error
+# ** Error: dc_router_top_tb.v(402): near "@": syntax error
+# ** Error: dc_router_top_tb.v(403): near "@": syntax error
+# ** Error: dc_router_top_tb.v(404): near "@": syntax error
+# ** Error: dc_router_top_tb.v(405): near "@": syntax error
+# ** Error: dc_router_top_tb.v(406): near "@": syntax error
+# ** Error: dc_router_top_tb.v(407): near "@": syntax error
+# ** Error: dc_router_top_tb.v(408): near "@": syntax error
+# ** Error: dc_router_top_tb.v(409): near "@": syntax error
+# ** Error: dc_router_top_tb.v(410): near "@": syntax error
+# ** Error: dc_router_top_tb.v(411): near "@": syntax error
+# ** Error: dc_router_top_tb.v(412): near "@": syntax error
+# ** Error: dc_router_top_tb.v(413): near "@": syntax error
+# ** Error: dc_router_top_tb.v(414): near "@": syntax error
+# ** Error: dc_router_top_tb.v(415): near "@": syntax error
+# ** Error: dc_router_top_tb.v(416): near "@": syntax error
+# ** Error: dc_router_top_tb.v(417): near "@": syntax error
+# ** Error: dc_router_top_tb.v(418): near "@": syntax error
+# ** Error: dc_router_top_tb.v(419): near "@": syntax error
+# ** Error: dc_router_top_tb.v(420): near "@": syntax error
+# ** Error: dc_router_top_tb.v(421): near "@": syntax error
+# ** Error: dc_router_top_tb.v(422): near "@": syntax error
+# ** Error: dc_router_top_tb.v(423): near "@": syntax error
+# ** Error: dc_router_top_tb.v(424): near "@": syntax error
+# ** Error: dc_router_top_tb.v(425): near "@": syntax error
+# ** Error: dc_router_top_tb.v(426): near "@": syntax error
+# ** Error: dc_router_top_tb.v(427): near "@": syntax error
+# ** Error: dc_router_top_tb.v(428): near "@": syntax error
+# ** Error: dc_router_top_tb.v(429): near "@": syntax error
+# ** Error: dc_router_top_tb.v(430): near "@": syntax error
+# ** Error: dc_router_top_tb.v(431): near "@": syntax error
+# ** Error: dc_router_top_tb.v(432): near "@": syntax error
+# ** Error: dc_router_top_tb.v(433): near "@": syntax error
+# ** Error: dc_router_top_tb.v(434): near "@": syntax error
+# ** Error: dc_router_top_tb.v(435): near "@": syntax error
+# ** Error: dc_router_top_tb.v(436): near "@": syntax error
+# ** Error: dc_router_top_tb.v(437): near "@": syntax error
+# ** Error: dc_router_top_tb.v(438): near "@": syntax error
+# ** Error: dc_router_top_tb.v(439): near "@": syntax error
+# ** Error: dc_router_top_tb.v(440): near "@": syntax error
+# ** Error: dc_router_top_tb.v(441): near "@": syntax error
+# ** Error: dc_router_top_tb.v(442): near "@": syntax error
+# ** Error: dc_router_top_tb.v(443): near "@": syntax error
+# ** Error: dc_router_top_tb.v(444): near "@": syntax error
+# ** Error: dc_router_top_tb.v(445): near "@": syntax error
+# ** Error: dc_router_top_tb.v(446): near "@": syntax error
+# ** Error: dc_router_top_tb.v(447): near "@": syntax error
+# ** Error: dc_router_top_tb.v(448): near "@": syntax error
+# ** Error: dc_router_top_tb.v(449): near "@": syntax error
+# ** Error: dc_router_top_tb.v(450): near "@": syntax error
+# ** Error: dc_router_top_tb.v(451): near "@": syntax error
+# ** Error: dc_router_top_tb.v(452): near "@": syntax error
+# ** Error: dc_router_top_tb.v(453): near "@": syntax error
+# ** Error: dc_router_top_tb.v(454): near "@": syntax error
+# ** Error: dc_router_top_tb.v(455): near "@": syntax error
+# ** Error: dc_router_top_tb.v(456): near "@": syntax error
+# ** Error: dc_router_top_tb.v(457): near "@": syntax error
+# ** Error: dc_router_top_tb.v(458): near "@": syntax error
+# ** Error: dc_router_top_tb.v(459): near "@": syntax error
+# ** Error: dc_router_top_tb.v(460): near "@": syntax error
+# ** Error: dc_router_top_tb.v(461): near "@": syntax error
+# ** Error: dc_router_top_tb.v(462): near "@": syntax error
+# ** Error: dc_router_top_tb.v(463): near "=":  expecting: IDENT
+# ** Error: dc_router_top_tb.v(466): near "@": syntax error
+# ** Error: dc_router_top_tb.v(467): near "@": syntax error
+# ** Error: dc_router_top_tb.v(468): near "@": syntax error
+# ** Error: dc_router_top_tb.v(469): near "@": syntax error
+# ** Error: dc_router_top_tb.v(470): near "=":  expecting: IDENT
+# ** Error: dc_router_top_tb.v(473): near "=":  expecting: IDENT
+# ** Error: dc_router_top_tb.v(475): near "@": syntax error
+# ** Error: dc_router_top_tb.v(476): near "@": syntax error
+# ** Error: dc_router_top_tb.v(477): near "@": syntax error
+# ** Error: dc_router_top_tb.v(478): near "@": syntax error
+# ** Error: dc_router_top_tb.v(479): near "@": syntax error
+# ** Error: dc_router_top_tb.v(480): near "@": syntax error
+# ** Error: dc_router_top_tb.v(481): near "@": syntax error
+# ** Error: dc_router_top_tb.v(482): near "@": syntax error
+# ** Error: dc_router_top_tb.v(483): near "@": syntax error
+# ** Error: dc_router_top_tb.v(484): near "@": syntax error
+# ** Error: dc_router_top_tb.v(485): near "@": syntax error
+# ** Error: dc_router_top_tb.v(486): near "@": syntax error
+# ** Error: dc_router_top_tb.v(487): near "=":  expecting: IDENT
+# ** Error: dc_router_top_tb.v(492): near "@": syntax error
+# ** Error: dc_router_top_tb.v(493): near "@": syntax error
+# ** Error: dc_router_top_tb.v(494): near "@": syntax error
+# ** Error: dc_router_top_tb.v(495): near "=":  expecting: IDENT
+# ** Error: dc_router_top_tb.v(498): near "@": syntax error
+# ** Error: dc_router_top_tb.v(499): near "@": syntax error
+# ** Error: dc_router_top_tb.v(500): near "@": syntax error
+# ** Error: dc_router_top_tb.v(501): near "@": syntax error
+# ** Error: dc_router_top_tb.v(502): near "@": syntax error
+# ** Error: dc_router_top_tb.v(503): near "@": syntax error
+# ** Error: dc_router_top_tb.v(504): near "@": syntax error
+# ** Error: dc_router_top_tb.v(505): near "@": syntax error
+# ** Error: dc_router_top_tb.v(506): near "@": syntax error
+# ** Error: dc_router_top_tb.v(507): near "@": syntax error
+# ** Error: dc_router_top_tb.v(508): near "@": syntax error
+# ** Error: dc_router_top_tb.v(509): near "@": syntax error
+# ** Error: dc_router_top_tb.v(510): near "@": syntax error
+# ** Error: dc_router_top_tb.v(511): near "@": syntax error
+# ** Error: dc_router_top_tb.v(512): near "@": syntax error
+# ** Error: dc_router_top_tb.v(513): near "@": syntax error
+# ** Error: dc_router_top_tb.v(514): near "@": syntax error
+# ** Error: dc_router_top_tb.v(515): near "@": syntax error
+# ** Error: dc_router_top_tb.v(516): near "@": syntax error
+# ** Error: dc_router_top_tb.v(517): near "@": syntax error
+# ** Error: dc_router_top_tb.v(518): near "@": syntax error
+# ** Error: dc_router_top_tb.v(519): near "@": syntax error
+# ** Error: dc_router_top_tb.v(520): near "@": syntax error
+# ** Error: dc_router_top_tb.v(521): near "@": syntax error
+# ** Error: dc_router_top_tb.v(522): near "@": syntax error
+# ** Error: dc_router_top_tb.v(523): near "@": syntax error
+# ** Error: dc_router_top_tb.v(524): near "@": syntax error
+# ** Error: dc_router_top_tb.v(525): near "@": syntax error
+# ** Error: dc_router_top_tb.v(526): near "@": syntax error
+# ** Error: dc_router_top_tb.v(527): near "@": syntax error
+# ** Error: dc_router_top_tb.v(528): near "@": syntax error
+# ** Error: dc_router_top_tb.v(529): near "@": syntax error
+# ** Error: dc_router_top_tb.v(530): near "@": syntax error
+# ** Error: dc_router_top_tb.v(531): near "@": syntax error
+# ** Error: dc_router_top_tb.v(532): near "@": syntax error
+# ** Error: dc_router_top_tb.v(533): near "@": syntax error
+# ** Error: dc_router_top_tb.v(534): near "@": syntax error
+# ** Error: dc_router_top_tb.v(535): near "@": syntax error
+# ** Error: dc_router_top_tb.v(536): near "@": syntax error
+# ** Error: dc_router_top_tb.v(537): near "@": syntax error
+# ** Error: dc_router_top_tb.v(538): near "@": syntax error
+# ** Error: dc_router_top_tb.v(539): near "@": syntax error
+# ** Error: dc_router_top_tb.v(540): near "@": syntax error
+# ** Error: dc_router_top_tb.v(541): near "@": syntax error
+# ** Error: dc_router_top_tb.v(542): near "=":  expecting: IDENT
+# ** Error: dc_router_top_tb.v(544): near "@": syntax error
+# ** Error: dc_router_top_tb.v(545): near "@": syntax error
+# ** Error: dc_router_top_tb.v(546): near "@": syntax error
+# ** Error: dc_router_top_tb.v(547): near "@": syntax error
+# ** Error: dc_router_top_tb.v(548): near "@": syntax error
+# ** Error: dc_router_top_tb.v(549): near "@": syntax error
+# ** Error: dc_router_top_tb.v(550): near "@": syntax error
+# ** Error: dc_router_top_tb.v(551): near "@": syntax error
+# ** Error: dc_router_top_tb.v(552): near "@": syntax error
+# ** Error: dc_router_top_tb.v(553): near "@": syntax error
+# ** Error: dc_router_top_tb.v(554): near "@": syntax error
+# ** Error: dc_router_top_tb.v(555): near "@": syntax error
+# ** Error: dc_router_top_tb.v(556): near "@": syntax error
+# ** Error: dc_router_top_tb.v(557): near "=":  expecting: IDENT
+# ** Error: dc_router_top_tb.v(559): near "@": syntax error
+# ** Error: dc_router_top_tb.v(560): near "@": syntax error
+# ** Error: dc_router_top_tb.v(561): near "@": syntax error
+# ** Error: dc_router_top_tb.v(563): near "===": syntax error
+# ** Error: /work/tools3/modeltech/linux/vlog failed.
+# Error in macro ./runsim.do line 29
+# /work/tools3/modeltech/linux/vlog failed.
+#     while executing
+# "vlog -incr dc_router_top_tb.v
+# "

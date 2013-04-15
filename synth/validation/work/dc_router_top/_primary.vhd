@@ -1,0 +1,44 @@
+library verilog;
+use verilog.vl_types.all;
+entity dc_router_top is
+    port(
+        chipselect      : in     vl_logic;
+        clk             : in     vl_logic;
+        reset           : in     vl_logic;
+        instruction     : in     vl_logic_vector(31 downto 0);
+        offset          : in     vl_logic_vector(31 downto 0);
+        filesize        : in     vl_logic_vector(31 downto 0);
+        acc_done        : out    vl_logic;
+        fft_enable      : out    vl_logic;
+        fir_enable      : out    vl_logic;
+        iir_enable      : out    vl_logic;
+        data_bus        : inout  vl_logic_vector(31 downto 0);
+        fft_data_in     : in     vl_logic_vector(31 downto 0);
+        fir_data_in     : in     vl_logic_vector(31 downto 0);
+        iir_data_in     : in     vl_logic_vector(31 downto 0);
+        fft_data_out    : out    vl_logic_vector(31 downto 0);
+        fir_data_out    : out    vl_logic_vector(31 downto 0);
+        iir_data_out    : out    vl_logic_vector(31 downto 0);
+        to_fft_empty    : in     vl_logic;
+        to_fft_full     : in     vl_logic;
+        from_fft_empty  : in     vl_logic;
+        from_fft_full   : in     vl_logic;
+        to_fir_empty    : in     vl_logic;
+        to_fir_full     : in     vl_logic;
+        from_fir_empty  : in     vl_logic;
+        from_fir_full   : in     vl_logic;
+        to_iir_empty    : in     vl_logic;
+        to_iir_full     : in     vl_logic;
+        from_iir_empty  : in     vl_logic;
+        from_iir_full   : in     vl_logic;
+        fft_put_req     : out    vl_logic;
+        fft_get_req     : out    vl_logic;
+        fir_put_req     : out    vl_logic;
+        fir_get_req     : out    vl_logic;
+        iir_put_req     : out    vl_logic;
+        iir_get_req     : out    vl_logic;
+        ram_read_enable : out    vl_logic;
+        ram_write_enable: out    vl_logic;
+        addr            : out    vl_logic_vector(31 downto 0)
+    );
+end dc_router_top;
